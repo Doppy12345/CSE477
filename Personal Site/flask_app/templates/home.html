@@ -1,0 +1,53 @@
+{% extends 'shared/layout.html' %}
+
+{% block extracss %}
+<link rel="stylesheet" href="{{ url_for('static', filename='main/css/content.css') }}">
+{% endblock %}
+
+{% block extrajs %}
+<script src="{{ url_for('static', filename='main/js/home.js') }}" defer></script>
+{% endblock %}
+
+{% block maincontent %}
+<section class="content-container">
+  <img class="portrait" src="{{ url_for('static', filename='main/images/portrait.jpg') }}" alt="picture of Daniel Passos" loading="lazy">
+  <div class="description">
+      <p><span class="intro">Daniel Passos</span> is a senior at Michigan State University pursing a degree in Computer Science. 
+      Most of his professional experience has been in the real of web development using tools such as angular, 
+      springboot and node.js. </p>
+
+      <p>He currently works with MSU's IT service department where his main 
+      responisibilites are to identify and fix bugs in a variety of web applications ranging from general use applications such as MSU's maps website
+      to more specific use case site such as the clery application for MSU. Over the course of his time working at MSU he has had the opportunity to 
+      gain experience with different kinds of modern web technologies such as webpack, docker and google analytics.</p>
+      <p class="ipsum hidden">
+
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at lacus sit amet purus porta euismod. Aliquam dapibus lorem id nisi posuere, sed tincidunt erat semper. Donec egestas aliquam lectus at luctus. Sed vel magna urna. Nulla non orci non elit pharetra pharetra. Suspendisse suscipit nec metus a maximus. Nulla tempor enim dui, id aliquet erat convallis ut. Curabitur nulla urna, elementum vitae neque non, placerat laoreet arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam sit amet metus quis nisi vulputate ullamcorper. Aliquam vulputate, turpis sed dignissim volutpat, quam dolor accumsan magna, sit amet varius purus turpis accumsan lacus. Ut condimentum, eros eget dictum ornare, sapien diam placerat nisi, ac viverra mauris odio vitae lorem. Morbi vel tincidunt nibh, mattis porta justo. Nulla vel aliquet tellus, ut egestas justo. Praesent sit amet rutrum justo.
+          
+          Sed quis bibendum ipsum. Duis et nisi libero. Suspendisse posuere arcu eu arcu laoreet ullamcorper. Maecenas laoreet ante vel iaculis fermentum. Sed aliquet gravida enim ac rhoncus. Vestibulum rhoncus elementum varius. Proin tortor tortor, tempor at ullamcorper sit amet, suscipit ut sem. Phasellus mattis leo quis ex semper egestas. Praesent aliquam nulla fermentum dolor tincidunt, quis egestas nulla blandit. Vivamus porta quam eu velit consectetur, sed blandit libero viverra. Sed justo augue, imperdiet laoreet elementum ac, blandit eget nisl. Vivamus sed dapibus neque, et euismod tortor. Pellentesque cursus finibus dui quis egestas. Suspendisse dignissim lorem laoreet imperdiet scelerisque. Nunc imperdiet, ipsum at condimentum ullamcorper, magna augue lobortis est, at congue est massa nec turpis. Vestibulum eu ultrices ante.
+          
+          Etiam in ex sit amet felis accumsan aliquet. Duis viverra libero sit amet velit tempor tristique et a elit. Aenean felis nunc, egestas nec tempus nec, ultrices ut dui. Phasellus interdum, arcu ut pulvinar aliquam, lorem neque imperdiet mauris, at interdum neque ligula sit amet nisl. Aenean gravida ligula at mauris consequat rhoncus. Maecenas vitae turpis quis turpis pretium ullamcorper non et erat. Donec elementum nulla vitae leo tempus, sed elementum neque maximus. Donec efficitur gravida dolor, vitae porta orci ultricies vitae. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris tincidunt nibh vel massa fermentum, et faucibus ipsum porttitor. Sed eu rutrum lorem. Fusce eu venenatis dui. Vestibulum sed augue fermentum, ultricies eros et, rhoncus risus.
+          
+          Vestibulum varius, leo ut efficitur pharetra, nibh velit placerat tortor, in porttitor neque leo et augue. Proin vel scelerisque velit. Quisque lobortis nulla et egestas euismod. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent non sapien et massa commodo iaculis vitae non est. Phasellus pharetra arcu mauris, ac lacinia leo lobortis eget. Maecenas elementum odio et libero placerat ultrices.
+          
+          Cras placerat vel mauris in rutrum. Ut efficitur lorem et nibh convallis accumsan. Aliquam erat volutpat. Etiam id mi vitae felis sagittis tempor. Praesent quis facilisis tellus. Cras rutrum ornare ipsum, nec finibus magna viverra tristique. Maecenas nunc dui, iaculis eget tincidunt ac, ullamcorper vel tellus. Vestibulum nulla quam, hendrerit in nisi sed, sodales volutpat dolor. Fusce aliquam ultrices ligula sed feugiat. Vivamus fermentum dui nisi, eu laoreet dui molestie a. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+          
+          Nunc interdum hendrerit dolor, vitae malesuada lectus pretium vel. Aliquam rhoncus, sem non commodo aliquam, massa tortor cursus arcu, in feugiat ipsum orci vitae ante. Quisque tincidunt elementum metus in interdum. Cras molestie arcu at risus interdum luctus. Proin risus massa, dignissim vel felis quis, luctus dapibus quam. Cras ac hendrerit orci. Maecenas id viverra tortor. Integer ullamcorper dui sit amet lacinia dictum. Vestibulum varius tortor bibendum lectus feugiat vestibulum. Phasellus fermentum cursus arcu eget pretium. Sed consequat, augue aliquam bibendum efficitur, velit risus accumsan magna, quis vehicula lectus ligula sed quam. Maecenas efficitur consequat tortor, vel lacinia mi mattis eu. Praesent lacus neque, ultricies viverra cursus in, varius nec leo. Curabitur vitae lacus porttitor, commodo mauris ut, vehicula ligula. Curabitur quis libero augue. Mauris egestas libero vel blandit pretium.
+          
+          Pellentesque sed fermentum magna. Cras sed tempor arcu, quis fringilla massa. Nulla tempus nisl vel mi lobortis, vel maximus neque feugiat. Aliquam laoreet nulla at tristique suscipit. Maecenas sit amet dui at neque suscipit gravida et non felis. Aliquam sed sapien in enim convallis aliquet. Aenean elementum hendrerit aliquet.
+          
+          Donec quis urna cursus, blandit enim in, ultrices felis. Praesent dignissim finibus dolor nec dignissim. Proin erat neque, pellentesque id enim nec, vulputate vehicula justo. In fermentum non elit vel luctus. Donec ultrices velit vel ligula dictum commodo. Nullam sit amet mauris non orci feugiat porta id ut libero. Ut aliquet sit amet lacus eu fermentum. Mauris quis tortor vitae lacus ornare cursus sed ut ante. Vivamus auctor consequat arcu, vitae pulvinar metus ultricies eget. Ut auctor ante a urna laoreet, consectetur eleifend diam ultricies. Aenean ac quam quis mauris vehicula pulvinar. Praesent vitae diam vulputate, eleifend quam eu, malesuada orci. Aenean vel quam in neque porta sollicitudin.
+          
+          Nunc eleifend finibus mauris, in tincidunt est tempor vitae. In hac habitasse platea dictumst. Donec auctor cursus est, at cursus nulla dignissim sed. Sed lacus ipsum, vehicula a diam id, eleifend ultricies mauris. Vestibulum vel efficitur neque, eget sagittis arcu. Pellentesque sed semper leo. Morbi tincidunt diam eget purus pretium fermentum.
+          
+          In orci metus, congue nec malesuada at, auctor et libero. Cras ut diam vitae lacus mollis ultricies ac ac neque. Nam sagittis sed urna et dignissim. Praesent egestas diam sit amet purus dignissim, vitae convallis lacus volutpat. Phasellus convallis in tortor ut interdum. Duis euismod rhoncus ultrices. Etiam porttitor sagittis dui at condimentum. Integer dignissim ligula non nibh vulputate facilisis. Suspendisse ac sollicitudin dui, eu ultricies sem. </p>
+      <p class="ipsum-gen">Click Here to test overflow</p>
+      </div>
+</section>
+<section class="heading">
+  <p class="heading-text">A fun fact about me:</p>
+  <p class="subheading">I have been skydivng twice</p>
+</section>
+{% endblock %}
+
+

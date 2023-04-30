@@ -1,0 +1,134 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2.5rem 10vw;
+    
+}
+
+.main .heading{
+    text-align: justify;
+    text-align-last: center;
+    width: 100%;
+}
+
+.main .heading {
+    margin-top: 2rem;
+}
+
+.main .heading .subheading{
+    margin: 2rem 0;
+}
+
+.main .content-container{
+    display: flex;
+    text-align: justify;
+    gap: 1rem;
+    width: 100%;
+    padding: 2rem 0;
+}
+
+.main > :not(:last-child){
+    border-bottom: #8a8a8a solid 2px;
+}
+
+.main > :last-child{
+    margin-bottom: auto;
+}
+.main .heading-text{
+    color: #412d00;
+    font-size: 2rem;
+}
+
+.main .content-container .portrait{
+    border: solid #000000 .25rem;
+    max-height: 100%;
+}
+
+.main .content-container .portrait-link{
+    max-width: 50%;
+    text-align: center;
+}
+
+.main .content-container .description{
+    padding-top: 1rem;
+    overflow: auto;
+}
+
+.main .content-container .description > :not(:last-child){
+    margin-bottom: 1rem;
+}
+
+.main .content-container .description .ipsum-gen{
+    text-decoration: underline;
+    color: #0077ff;
+    cursor: pointer;
+
+} 
+
+.main .content-container .description .ipsum-gen:hover{
+    color: #7700ff;
+}
+
+.main .content-container .description .ipsum{
+    display: inline;
+}
+
+.main .content-container .description .ipsum.hidden{
+    display: none;
+}
+
+.main .content-container .description .intro{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+
+/*small screens*/
+@media only screen and (max-width: 650px){
+
+    .main .content-container{
+        flex-direction: column;
+        align-items: center;
+        overflow: visible;
+        max-height: unset;
+    }
+
+    .main .content-container .description{
+        overflow: visible;
+        width: 100%;
+
+    }
+
+    .main .content-container .portrait{
+        width: 100%;
+
+    }
+
+}
+
+/*large screen*/
+@media only screen and (min-width: 651px){
+  
+    
+    .main .content-container{
+        flex-direction: row;
+        justify-content: center;
+        max-height: 50vh;
+        gap: 1rem;
+        overflow: hidden;
+        
+    }
+    
+    .main .content-container .portrait{
+        width: 50%;
+
+    }
+    
+    .main .content-container .description{
+        width: 50%;
+        overflow: auto;
+    }
+    
+}

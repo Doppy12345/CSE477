@@ -1,0 +1,176 @@
+.piano{
+    
+    --white-key-color: #CECED0;
+    --white-key-width: 6vw;
+    --black-key-color: #000000; 
+    background: #1F2329;
+    height: 64vw;
+    width: 64vw;
+    border-radius: 10% 10% 0 0;
+    
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+    text-align: center;
+}
+
+.main .section{
+    width: 72vw;
+    border-bottom: #8a8a8a solid .25rem;
+    padding-bottom: 3rem;
+    margin-bottom: 5rem;
+}
+
+.main .section .heading{
+    font-size: 2rem;
+    font-style: italic;
+    text-align: justify;
+    text-align-last: center;
+}
+
+.piano .title{
+    font-family: "Charm";
+    font-weight: bold;
+    z-index: 1;
+    position: relative;
+    font-size: 4rem;
+    color: #fff;
+    top: 8vw;
+
+}
+
+.piano .white-key-container{
+   position: relative;
+   left: 5%;
+   top: 17.5vw;
+   display: flex;
+   width: 90%;
+   height: 36vw;
+
+}
+
+.piano .white-key{
+    position: relative;
+    display: flex;
+    border-radius: 1rem;
+    border: .35rem solid #000000;
+    width: 6vw;
+    background-color: var(--white-key-color);
+    justify-content: center;
+}
+
+.piano .white-key .key-letter{
+    position: absolute;
+    bottom: 0;
+    font-size: 2rem;
+    opacity: 0;
+    transition: opacity .3s ease-in;
+}
+
+.piano:hover .white-key .key-letter{
+    opacity: 1;
+}
+
+.piano .black-key-container{
+    position: relative;
+    left: 10.75%;
+    top: -18.5vw;
+    display: flex;
+}
+
+.piano .black-key{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    border-radius: 1rem;
+    width: 4vw;
+    height: 25vw;
+    background-color: var(--black-key-color);
+}
+
+.piano .black-key, .piano .white-key{
+    transition: transform .1s ease-in;
+}
+
+.piano .black-key .key-letter{
+    position: absolute;
+    bottom: 0;
+    color: var(--white-key-color);
+    font-size: 2rem;
+    opacity: 0;
+    transition: opacity .3s ease-in;
+}
+
+.piano:hover .black-key .key-letter{
+    opacity: 1;
+}
+
+.piano .key-letter{
+    padding-bottom: .5rem;
+}
+
+.piano .black-key:nth-child(1){
+    margin-right: 1.9vw;
+}
+
+.piano .black-key:nth-child(2){
+    margin-right: calc(1.5vw + var(--white-key-width));
+}
+
+.piano .black-key:nth-child(n+3):nth-child(-n+4){
+    margin-right: 1.7vw;
+}
+
+.piano .black-key:nth-child(5){
+    margin-right: calc(1.7vw + var(--white-key-width));
+}
+
+.piano .black-key:nth-child(6){
+    margin-right: 1.7vw;
+}
+
+.piano .black-key.pressed, .piano .white-key.pressed{
+    transform: scale(1.05);
+}
+
+.piano.awoken .white-key-container, .piano.awoken .black-key-container{
+    display: none;
+
+}
+
+.piano .old-one{
+    display: block;
+    z-index: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10% 10% 0 0;
+    transition: opacity 1s ease-in;
+    margin-top: -6.1875rem;
+}
+
+.piano .old-one.hidden{
+    display: none;
+}
+
+.piano.awoken .old-one{
+    opacity: 1; 
+}
+
+/*smaller screens*/
+@media only screen and (max-width: 500px){
+    .piano .title{
+        font-size: 3rem;
+    }
+    .piano .black-key .key-letter,
+    .piano .white-key .key-letter{
+        font-size: 1.2rem;
+    }
+    .piano .old-one{
+        margin-top: -4.65rem;
+    }
+}

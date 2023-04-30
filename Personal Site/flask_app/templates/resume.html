@@ -1,0 +1,67 @@
+{% extends 'shared/layout.html' %}
+
+{% block extracss %}
+<link rel="stylesheet" href="{{ url_for('static', filename='main/css/resume.css') }}">
+{% endblock %}
+
+{% block maincontent %}
+
+
+      <!-- For each institution - generate a row --> 
+      {% for inst in resume_data %}
+      <!-- Do something... -->
+    <section class="resume-entry">
+      <div class="heading"><h1 class="inst-title">{{ inst['name']}} </h1>
+        <span class="inst-details">
+          {% if inst['address'] is not none %} {{inst['address']}},  {% endif %}
+          {% if inst['city'] is not none %} {{inst['city']}} {% endif %}
+          {% if inst['state'] is not none %} , {{inst['state']}} {% endif %}
+          {% if inst['zip'] is not none %} , {{inst['zip']}} {% endif %}
+
+        </span>
+      </div>
+        {% if inst['positions'] != [] %}
+          {% for pos in inst['positions'] %}
+          <!-- Do something else... -->
+          <div class="positon-block">
+            <div class="heading"><h2 class="pos-title">{{ pos['title']}} </h2>
+              <span class="pos-time">
+                {{pos['start_date']}}, 
+                {% if pos['end_date'] is not none %} {{pos['end_date']}}  {% endif %}
+                {% if pos['end_date'] is none %} Current  {% endif %}
+              </span>
+            </div>
+            <div class="experience-block">
+              <ul class="experience-list">
+                {% for exp in pos['experiences']%}
+                <li class="exp-entry">
+                  <span class="exp-title">
+                    {% if exp['hyperlink'] is not none %}
+                    <a href="{{exp['hyperlink']}}" class="exp-link">{{exp['name']}}:</a>
+                    {% else %}
+                    {{exp['name']}}:
+                    {% endif %}
+                  </span>
+                  {{exp['description']}}
+                  <div class="skills-container">Skills Utilized: 
+                  {% for skill in exp['skills'] %}
+                    
+                    <span class="skill-chip">{{skill['name']}}</span>
+                  {% endfor %}
+                </div>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+        </div>
+          {% endfor %}
+        {% endif %}
+        
+      </section> 
+      {% endfor %}
+
+
+
+{% endblock %}
+
+

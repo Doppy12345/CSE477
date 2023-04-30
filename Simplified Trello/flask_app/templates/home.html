@@ -1,0 +1,73 @@
+{% extends 'shared/layout.html' %}
+
+{% block extracss%}
+<link rel="stylesheet" href="{{ url_for('static', filename='main/css/home.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='main/css/modal.css') }}">
+{% endblock %}
+
+{% block extrajs%}
+<script src="{{ url_for('static', filename='main/js/home.js') }}" defer></script>
+{% endblock %}
+
+{% block maincontent %}
+<header class="section">
+  <span class="heading">My Projects</span>
+</header>
+
+<dialog class="create-board-modal modal {% if isNew %}show{% endif %}" >
+  <div class="create-board-header header">
+    <span class="title">
+      Start A New Project
+    </span>
+    <button class="exit-button">X</button>
+  </div>
+  <form action="/createBoard" method="POST" class="create-board-form form" id="create-board-form">
+    <fieldset class="form-entry">
+      <label for="name" class="form-label">Project Name</label>
+      <input name="name" id="name" type="text" class="form-input" required placeholder="Project Name" pattern="(\w+\s*)+">
+    </fieldset>
+    <fieldset class="form-entry">
+      <label for="email" class="form-label">Allowed Users</label>
+      <input name="email" id="email" type="email" class="form-input" placeholder="email@url.com, other@email.com, ..." multiple pattern="(\w+\d*@{1}\w+\.{1}[A-z]{2,})(, ?\w+\d*@{1}\w+\.{1}[A-z]{2,})*">
+      <span class="email-input-guide">Enter emails of other users you wish to have access to this board. Please exclude own email</span>
+    </fieldset>
+    <button class="submit">Create</button>
+  </form>
+</dialog>
+
+{% for board in myBoards %}
+      <!-- Do something... -->
+    <a href="/board/{{board['board_id']}}">
+      <section class="board-entry">
+        <div class="heading">
+          <p class="name">{{ board['name']}}</p>
+          <span class="board-id">ID: {{board['board_id']}}</span>
+          <ul class="insights">
+            <li class="todo">To do: {{board['insights']['todo']}}</li>
+            <li class="doing">Doing: {{board['insights']['doing']}}</li>
+            <li class="complete">Complete: {{board['insights']['complete']}}</li>
+          </ul>
+        </div>
+        <ul class="participants">
+          <span class="member-heading">Members:</span>
+          <li class="member">Me</li>
+          {% for member in board['members'] %}
+          <li class="member">
+            {% if user != member %}
+              {{member}}
+            {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </section> 
+  </a>
+      {% endfor %}
+    <section class="create-board">
+      <button class="new-board"> Create Board <span class="plus">+</span></button>
+    </section>
+
+{% endblock %}
+
+
+
+

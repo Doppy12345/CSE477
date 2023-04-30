@@ -1,0 +1,23 @@
+{% extends 'shared/loginTemplate.html' %}
+
+{% block signupjs %}
+<script src="{{ url_for('static', filename='main/js/signup.js') }}" defer></script>
+{% endblock %}
+
+
+
+
+
+
+
+    {% block signupFieldBlock %}
+    {% endblock %}
+    {% block loginSignupContent %}
+    <p class="failure-message hidden">A user with this email already exits</p>
+    {% endblock %}
+
+
+
+
+
+

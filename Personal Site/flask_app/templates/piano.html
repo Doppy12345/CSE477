@@ -1,0 +1,78 @@
+{% extends 'shared/layout.html' %}
+
+{% block extracss %}
+<link rel="stylesheet" href="{{ url_for('static', filename='main/css/piano.css') }}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Charm">
+{% endblock %}
+
+{% block extrajs %}
+<script src="{{ url_for('static', filename='main/js/piano.js') }}" defer></script>
+{% endblock %}
+
+{% block maincontent %}
+    <section class="section">
+        <p class="heading">Behold piano great and old. It's master slumbers in far off cold. If you wish to see anew, call out to it - we see you.</p>
+    </section>
+    <div id="piano" class="piano">        
+        <p class="title">The Great Old One</p>
+        <div class="white-key-container">
+            <div data-keycode="65" class="key white-key">
+                <span class="key-letter">A</span>
+            </div>
+            <div data-keycode="83" class="key white-key">
+                <span class="key-letter">S</span>
+            </div>
+            <div data-keycode="68" class="key white-key">
+                <span class="key-letter">D</span>
+            </div>
+            <div data-keycode="70" class="key white-key">
+                <span class="key-letter">F</span>
+            </div>
+            <div data-keycode="71" class="key white-key">
+                <span class="key-letter">G</span>
+            </div>
+            <div data-keycode="72" class="key white-key">
+                <span class="key-letter">H</span>
+            </div>
+            <div data-keycode="74" class="key white-key">
+                <span class="key-letter">J</span>
+            </div>
+            <div data-keycode="75" class="key white-key">
+                <span class="key-letter">K</span>
+            </div>
+            <div data-keycode="76" class="key white-key">
+                <span class="key-letter">L</span>
+            </div>
+            <div data-keycode="59" class="key white-key">
+                <span class="key-letter">;</span>
+            </div>
+        </div>
+        <div class="black-key-container">
+            <div data-keycode="87" class="key black-key">
+                <span class="key-letter">W</span>
+            </div>
+            <div data-keycode="69" class="key black-key">
+                <span class="key-letter">E</span>
+            </div>
+            <div data-keycode="84" class="key black-key">
+                <span class="key-letter">T</span>
+            </div>
+            <div data-keycode="89" class="key black-key">
+                <span class="key-letter">Y</span>
+            </div>
+            <div data-keycode="85" class="key black-key">
+                <span class="key-letter">U</span>
+            </div>
+            <div data-keycode="79" class="key black-key">
+                <span class="key-letter">O</span>
+            </div>
+            <div data-keycode="80" class="key black-key">
+                <span class="key-letter">P</span>
+            </div>
+            
+        </div>
+        
+        <img src="{{ url_for('static', filename='main/images/texture.jpeg') }}" alt="The Great Old One" loading="lazy" class="old-one hidden">
+
+    </div>
+{% endblock %}

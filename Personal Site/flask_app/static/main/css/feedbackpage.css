@@ -1,0 +1,27 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2.5rem 10vw;
+    
+}
+
+.main .heading{
+    text-align: justify;
+    text-align-last: center;
+    width: 100%;
+}
+
+.main .heading-text{
+    color: #412d00;
+    font-size: 1.5rem;
+}
+
+.main .feedback-list{
+    margin-top: 2rem;
+}
+
+.main .feedback-list .comment{
+    padding: .5rem;
+}

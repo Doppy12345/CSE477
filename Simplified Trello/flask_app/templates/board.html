@@ -1,0 +1,83 @@
+{% extends 'shared/layout.html' %}
+
+{% block extracss%}
+<link rel="stylesheet" href="{{ url_for('static', filename='main/css/board.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='main/css/modal.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='main/css/task.css') }}">
+{% endblock %}
+
+{% block extrajs%}
+<script src="{{ url_for('static', filename='main/js/board.js') }}" defer></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.4.2.min.js"></script>
+<script src="https://cdn.socket.io/3.1.1/socket.io.min.js"></script>
+{% endblock %}
+
+{% block maincontent %}
+<header class="section">
+  <span class="heading">{{boardName}}</span>
+</header>
+
+<section class="lists">
+  <div class="list-container">
+    <header class="section">
+      <span class="heading">To Do</span>
+    </header>
+    <div class="list todo">
+      <button class="new-task">Add Task</button>
+    </div>
+  </div>
+  <div class="list-container">
+    <header class="section">
+      <span class="heading">Doing</span>
+    </header>
+    <div class="list doing">
+
+    </div>
+  </div>
+  <div class="list-container">
+    <header class="section">
+      <span class="heading">Complete</span>
+    </header>
+    <div class="list complete">
+
+    </div>
+  </div>
+</section>
+
+<section class="chat-box">
+  <div id="chat" contenteditable></div>
+  <form data-board_id="{{board_id}}" data-current_user="{{user}}" class="chat-form" id="chat-form">
+    <input name="message" id="message" type="text" class="form-input" required placeholder="Enter your message here" >
+    <input name="room" id="room" type="hidden" value="{{board_id}}">
+    <input name="user" id="user" type="hidden" value="{{user}}">
+    <button class="submit">Leave Message</button>
+  </form>
+</section>
+
+<dialog class="new-task-modal modal" >
+  <div class="new-task-header header">
+    <span class="title">
+      Add A New Task
+    </span>
+    <button class="exit-button">X</button>
+  </div>
+  <form class="new-task-form form" id="new-task-form">
+    <fieldset class="form-entry">
+      <label for="title" class="form-label">Task Name</label>
+      <input name="title" id="title" type="text" class="form-input" required placeholder="Task Name" pattern="(\w+\s*)+">
+    </fieldset>
+    <fieldset class="form-entry">
+      <label for="description" class="form-label">Task Description</label>
+      <textarea name="description" id="description" class="form-textarea" required placeholder="Task description" rows="3" cols="50"></textarea>
+    </fieldset>
+    <button class="submit">Add Task</button>
+  </form>
+</dialog>
+
+
+
+{% endblock %}
+
+
+
+

@@ -1,0 +1,6 @@
+"exp_id","position_id","name","description","hyperlink","start_date","end_date"
+"1",1,"Indvidual Contribuition","Addressed pre-existing software bugs and implemented several user-facing features to webapps utilized by thousands of students and staff.",NULL,2022-04-01,NULL
+"2",2,"Intern Project","Collaborated with another intern and a senior developer to implement several new features for an internal tool for monitoring and testing customer-facing loan- product applications",NULL,2022-05-01,NULL
+"3",2,"Continuous Integration Workshop","Learned about and utilized continuous development/integration tools such as Jenkins pipeline",NULL,NULL,NULL
+"4",3,"Prototyped Javafx GUI App","Developed data simulation software to examine potential business cases and access costing and profitability. Javafx was utilized to create the ui.","https://openjfx.io/",NULL,NULL
+"5",4,"Scratch And Python Lessons","Led programming classes for kids ages 6-18 with the goal of giving them a foundational understanding. Classes included a variety of languages including python,javascript,and scratch.","https://www.codewithus.com/",NULL,NULL

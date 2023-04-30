@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+/*smaller screens*/
+@media only screen and (max-width: 650px){
+    :root{
+        font-size: 9px;
+    }
+}
+/*medium screens*/
+@media only screen and (max-width: 1200px) and (min-width: 651px){
+    :root{
+        font-size: 12px;
+    }
+}
+
+
+

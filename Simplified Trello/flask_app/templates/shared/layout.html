@@ -1,0 +1,68 @@
+<!-- FILL ME IN WITH CODE FOR YOUR PAGE LAYOUT -->
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dr. Ghassemi's personal page</title>
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/navbar.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/main.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='main/images/favicon.ico') }}">
+  {% block extracss %}{% endblock %}
+  <script src="{{ url_for('static', filename='main/js/nav.js') }}" defer></script>
+
+  {% block extrajs %}{% endblock %}
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul class="links-container">
+            <li class="nav-link menubar"><img src="{{ url_for('static', filename='main/images/menu-bar.png') }}" alt="menu bar icon" loading="lazy"></li>
+            <li><a class="nav-link" href="/home">Home</a></li>
+            {% if user == 'Unknown' %}                   
+                <li><a class="nav-link" href="/login">Login</a></li>
+                <li><a class="nav-link" href="/signup">Sign Up</a></li>
+            {% else %}
+                <li><a class="nav-link" href="/logout">Logout</a></li>
+                <li class="nav-link">{{user}}</li>
+            {% endif %}
+        </ul>
+        <div id="mobile-nav" class="hidden">
+            <ul class="links-dropdown">
+                <li><a class="nav-link" href="/home">Home</a></li>
+                {% if user == 'Unknown' %}
+                    <li><a class="nav-link" href="/login">Login</a></li>
+                    <li><a class="nav-link" href="/signup">Sign Up</a></li>
+                {% else %}
+                    <li><a class="nav-link" href="/logout">Logout</a></li>
+                    <li class="nav-link">{{user}}</li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+
+    <!-- The main content  -->
+    <main class="main">
+      {% block maincontent %}{% endblock %}
+    </main>
+
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

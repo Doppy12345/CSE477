@@ -1,0 +1,86 @@
+.task{
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 1rem rgba(0 0 0 / .3);
+    width: 80%;
+    background-color: #ffffff;
+    transition: transform 150ms ease;
+}
+
+
+
+.task .heading{
+   display: flex;
+   align-items: center;
+   justify-content: start;
+}
+
+.task .heading .title{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.task .description{
+    padding: .25rem;
+    margin: .5rem 0;
+    font-size: .9rem;
+    color: #412d00;
+}
+
+.task.editing {
+    transform: scale(1.3);
+
+}
+
+.task .controls{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.task .controls .edit,
+.task .controls .submit{
+    cursor: pointer;
+    font-size: .8rem;
+    font-weight: bold;
+    padding: .25em;
+    border-radius: 10px;
+    border: solid 1px;
+    border-color: #ffffff;
+    background-color: #251c35;
+    color: #ffffff;
+    width: 10ch;
+
+    background-image: linear-gradient(to left, transparent, transparent 50%, #ffffff 50%, #ffffff);
+    background-position: 100% 0;
+    background-size: 200% 100%;
+    transition: all .25s ease;
+}
+
+.task .controls .submit:hover,
+.task .controls .edit:hover{
+    background-position: 0 0;
+    color: #251c35;
+    border-color: #251c35;
+}
+
+.task .controls .edit.hide,
+.task .controls .submit.hide{
+    filter: opacity(.6);
+    pointer-events: none;
+}
+
+.task.reserved .description{
+    color: #000;
+    filter: opacity(.5);
+}
+
+@media only screen and (max-width: 650px){
+
+    .task .controls .edit,
+    .task .controls .submit{
+        width: 10ch;
+        font-size: .65rem;
+    }
+}

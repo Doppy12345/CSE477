@@ -1,0 +1,101 @@
+<!-- FILL ME IN WITH CODE FOR YOUR PAGE LAYOUT -->
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daniel Passos's Personal Page</title>
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/header.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/navbar.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/footer.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/feedback.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/main.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='main/images/favicon.ico') }}">
+  {% block extracss %}{% endblock %}
+  <script src="{{ url_for('static', filename='main/js/nav.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='main/js/feedback.js') }}" defer></script>
+  {% block extrajs %}{% endblock %}
+</head>
+
+<body>
+    <article>
+    <!-- The header  -->
+    <header class="header"></header>
+    <nav class="navbar">
+        <span id="user">{% if user == 'Unknown' %}CSE 477 Homework-3{% else %} Logged in as {{user}} {% endif %}</span>
+        <ul class="links-container">
+            <li class="nav-link menubar"><img src="{{ url_for('static', filename='main/images/menu-bar.png') }}" alt="menu bar icon" loading="lazy"></li>
+            <li><a class="nav-link" href="/home">Home</a></li>
+            <li><a class="nav-link" href="/projects">Projects</a></li>
+            <li><a class="nav-link" href="/resume">Resume</a></li>
+            <li><a class="nav-link" href="/chat">Chat</a></li>
+            {% if user == 'Unknown' %}<li><a class="nav-link" href="/login">Login</a></li>
+            {% else %}<li><a class="nav-link" href="/logout">Logout</a></li>
+            {% endif %}
+            <li><a class="nav-link" href="https://linkedin.com/in/daniel-passos-b36620229"><img src="{{ url_for('static', filename='main/images/social-linkedin.png') }}" loading="lazy" alt="linkedin icon"></a></li>
+        </ul>
+        <div id="mobile-nav" class="hidden">
+            <ul class="links-dropdown">
+                <li><a class="nav-link" href="/home">Home</a></li>
+                <li><a class="nav-link" href="/projects">Projects</a></li>
+                <li><a class="nav-link" href="/resume">Resume</a></li>
+                <li><a class="nav-link" href="/chat">Chat</a></li>
+                {% if user == 'Unknown' %}<li><a class="nav-link" href="/login">Login</a></li>
+                {% else %}<li><a class="nav-link" href="/logout">Logout</a></li>
+                {% endif %}
+                <li><a class="nav-link" href="https://linkedin.com/in/daniel-passos-b36620229">LinkedIn</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <aside class="feedback">
+      <span class="feedback-banner">FeedBack</span>
+    </aside>
+    <dialog class="feedback-modal">
+      <div class="feedback-header">
+        <span class="feedback-title">
+          Submit Your Feedback
+        </span>
+        <button class="exit-button">X</button>
+      </div>
+      <form action="/processfeedback" method="POST" class="feedback-form">
+        <fieldset class="form-entry">
+          <label for="name" class="form-label">Name:</label>
+          <input name="name" id="name" type="text" class="form-input" required placeholder="Your Name" pattern="[A-z]+\s?[A-z]+">
+        </fieldset>
+        <fieldset class="form-entry">
+          <label for="email" class="form-label">Email Address:</label>
+          <input name="email" id="email" type="email" class="form-input" required placeholder="Your Email" pattern="\w+@{1}\w+\.{1}[A-z]{2,}">
+        </fieldset>
+        <fieldset class="form-entry">
+          <label for="feedback" class="form-label">Feedback:</label>
+          <textarea name="feedback" id="feedback" class="form-textarea" required placeholder="Your Feedback" rows="3" cols="50"></textarea>
+        </fieldset>
+        <button class="submit">Send Feedback</button>
+      </form>
+    </dialog>
+
+    <!-- The main content  -->
+    <main class="main">
+      {% block maincontent %}{% endblock %}
+    </main>
+
+
+
+
+    <!-- The footer of the file -->
+    <footer class="footer">© 2022 Daniel Passos </footer>
+
+    
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+

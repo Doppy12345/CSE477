@@ -1,0 +1,170 @@
+
+.feedback .feedback-banner{
+    position: fixed;
+    top: 50%;
+    right: 0;
+    width: 1.5em;
+    padding: 1em;
+
+    font-weight: bold;
+    writing-mode: sideways-lr;
+    color: #ffffff;
+    background-color: #1F2329;
+    border-radius: 10px 0 0 10px;
+
+    cursor: pointer;
+   
+    
+}
+
+.feedback .feedback-banner:hover{
+    width: 2.5em;
+    
+}
+
+.feedback .hidden{
+    display: none;
+}
+
+.feedback-modal{
+    position: relative;
+    max-width: 100ch;
+    min-width: 80ch;
+    padding: 0 1.5em 1em 1.5em;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 0 1em rgba(0 0 0 / .3);
+    text-align: justify;
+    margin: auto;
+}
+
+.feedback-modal::backdrop{
+    color: rgba(0,0,0, .3);
+}
+
+.feedback-modal .exit-button{
+    color: #ffffff;
+    font-size: 2em;
+    font-weight: bold;
+    background-color: #1F2329;
+    margin-left: auto;
+    outline: none;
+    border: none;
+
+    cursor: pointer;
+    transition: transform ease 100ms;
+}
+
+.feedback-modal .exit-button:hover{
+    transform: scale(1.2);
+}
+
+.feedback-modal .feedback-header{
+    display: flex;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.feedback-modal .feedback-header::before{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 5em;
+    content: "";
+    background-color: #251c35;
+    opacity: 1;
+    z-index: -1;
+}
+
+.feedback-modal .feedback-header .feedback-title{
+    margin-right: 1em;
+    font-size: 2em;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.feedback-modal .feedback-form{
+    margin-top: 2.5em;
+    margin-left: 2em;
+}
+
+.feedback-modal .feedback-form .form-entry{
+    display: flex;
+    flex-direction: column;
+    border: none;
+}
+
+.feedback-modal .feedback-form .form-entry .form-label{
+    font-size: 1.2em;
+    margin: .25em;
+}
+
+.feedback-modal .feedback-form .form-entry .form-input,
+.feedback-modal .feedback-form .form-entry .form-textarea{
+    background-color: #f8f8f8;
+    padding: .25em;
+    border: none;
+    border-radius: .25em;
+    
+    font-size: 1.2em;
+    margin-top: .25em;
+    margin-bottom: .25em;
+    margin-left: 2em;
+    max-width: 40ch;
+}
+
+
+
+.feedback-modal .feedback-form .form-entry .form-input:focus, 
+.feedback-modal .feedback-form .form-entry .form-textarea:focus{
+    border: #000000 solid 1px !important;
+    outline: none;
+}
+
+.feedback-modal .feedback-form .form-entry .form-input:user-invalid,
+.feedback-modal .feedback-form .form-entry .form-textarea:user-invalid{
+    border: solid #ff0000 1px;
+}
+
+.feedback-modal .feedback-form .form-entry .form-input:valid,
+.feedback-modal .feedback-form .form-entry .form-textarea:valid{
+    border: solid #287d00 1px;
+}
+
+.feedback-modal .feedback-form .submit{
+    cursor: pointer;
+    font-size: 1.2em;
+    margin-top: 1em;
+    font-weight: bold;
+    padding: .5em;
+    border-radius: 10px;
+    border: solid 1px;
+    border-color: #ffffff;
+    background-color: #251c35;
+    color: #ffffff;
+
+    background-image: linear-gradient(to left, transparent, transparent 50%, #ffffff 50%, #ffffff);
+    background-position: 100% 0;
+    background-size: 200% 100%;
+    transition: all .25s ease;
+    
+}
+
+.feedback-modal .feedback-form .submit:hover{
+    background-position: 0 0;
+    color: #251c35;
+    border-color: #251c35;
+    
+}
+
+
+
+
+@media only screen and (max-width: 550px){
+    .feedback-modal {
+        font-size: 8px;
+        min-width: 60ch;
+        max-width: 60ch;
+    }
+
+}

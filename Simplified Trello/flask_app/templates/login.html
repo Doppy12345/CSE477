@@ -1,0 +1,15 @@
+{% extends 'shared/loginTemplate.html' %}
+
+{% block signupjs%}
+<script src="{{ url_for('static', filename='main/js/login.js') }}" defer></script>
+{% endblock %}
+
+    {% block loginSignupContent %}
+    <p class="failure-message hidden">Authetication Failure: <span class="failure-count"></span></p>
+    {% endblock %}
+
+
+
+
+
+

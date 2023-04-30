@@ -1,0 +1,5 @@
+"inst_id","type","name","department","address","city","state","zip"
+"1","Academia","Michigan State University",NULL,NULL,"East Lansing","Michigan",48825
+"2","Industry","Freddie Mac","Underwriting",NULL,"McLean","Virginia",NULL
+"3","Industry","Graham Packaging",NULL,NULL,"Lansing","Michigan",NULL
+"4","Industry","Code With Us",NULL,NULL,"Lansing","Michigan",NULL

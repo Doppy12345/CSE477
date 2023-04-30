@@ -1,0 +1,150 @@
+a{
+    text-decoration: none;
+    color: inherit;
+
+}
+
+a:visited{
+    color: inherit;
+    text-decoration: none;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+    text-align: center;
+    
+}
+
+.main .section{
+    width: 60vw;
+    border-bottom: #8a8a8a solid .25rem;
+    padding-bottom: 2rem;
+    margin-bottom: 3.5rem;
+    text-decoration: none;
+
+}
+
+.main .section .heading{
+    font-size: 2rem;
+    font-style: italic;
+    text-align: justify;
+    text-align-last: center;
+}
+
+.create-board .new-board{
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: .5em 1em;
+    border-radius: 10px;
+    border: solid 1px;
+    border-color: #ffffff;
+    background-color: #251c35;
+    color: #ffffff;
+
+    background-image: linear-gradient(to left, transparent, transparent 50%, #ffffff 50%, #ffffff);
+    background-position: 100% 0;
+    background-size: 200% 100%;
+    transition: all .25s ease;
+
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.create-board .new-board:hover{
+    background-position: 0 0;
+    color: #251c35;
+    border-color: #251c35;
+}
+
+.create-board .new-board .plus{
+    font-size: 2rem;
+}
+.create-board-modal .create-board-form .form-entry .email-input-guide{
+    font-size: .8em;
+    margin-top: .5rem;
+    margin-left: 5em; 
+    filter: opacity(.5);
+}
+
+.board-entry{
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 1rem rgba(0 0 0 / .3);
+    margin: 1.2rem;
+    width: 48vw;
+    cursor: pointer;
+    transition: transform 200ms ease;
+}
+
+.board-entry:hover{
+    transform: scale(1.1);
+}
+
+
+.board-entry .heading{
+    display: flex;
+    align-items: center;
+
+}
+
+.board-entry .heading .name{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.board-entry .heading .board-id{
+    margin-left: 1rem;
+    font-size: .8rem;
+    filter: opacity(.6);
+}
+
+.board-entry .heading >*:last-child{
+    margin-left: auto;
+}
+
+.board-entry .heading .insights{
+    display: flex;
+    font-size: .9rem;
+    gap: .75rem;
+    list-style: none;
+}
+
+.board-entry .participants{
+    margin: 0 1.75rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: .5rem;
+    color: #412d00;
+}
+
+
+@media only screen and (max-width: 550px){
+    .modal {
+        font-size: 8px;
+        min-width: 60ch;
+        max-width: 60ch;
+    }
+
+    .main{
+        font-size: 9px;
+    }
+
+    .main .section{
+        width: 84vw;
+        border-bottom: #8a8a8a solid .25rem;
+        padding-bottom: 2rem;
+        margin-bottom: 3.5rem;
+    }
+
+    .board-entry{
+        width: 70vw;
+    }
+
+}

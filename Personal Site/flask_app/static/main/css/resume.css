@@ -1,0 +1,78 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 2rem;
+    padding: 1rem;
+}
+
+.resume-entry{
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 1rem rgba(0 0 0 / .3);
+    margin: 1.2rem;
+}
+
+
+ .resume-entry .heading{
+    display: flex;
+    align-items: center;
+    margin: .5rem;
+}
+
+.resume-entry .heading .inst-title{
+    font-size: 2.0rem;
+    color: #1f0d3d;
+}
+
+.resume-entry .heading .pos-title{
+    font-size: 1.3rem;
+    margin-left: 1rem;
+    color: #412d00;
+}
+
+.resume-entry .heading >*:last-child{
+    margin-left: auto;
+}
+
+.resume-entry .experience-block{
+    padding: 1rem;
+    margin: .5rem 2rem;
+    width: 70%;
+}
+
+.resume-entry .experience-block .experience-list{
+    list-style: none;
+}
+
+.resume-entry .experience-block .exp-entry{
+    margin: .4rem;
+}
+.resume-entry .experience-block .exp-entry .exp-title{
+    font-style: italic;
+    font-weight: bold;
+}
+
+.resume-entry .experience-block .exp-entry .exp-link,
+.resume-entry .experience-block .exp-entry .exp-link:visited
+{
+    color: #0077ff;
+
+} 
+
+.resume-entry .experience-block .exp-entry .exp-link:hover{
+    color: #7700ff;
+}
+
+.resume-entry .skills-container{
+    margin-top: .5rem;
+    font-size: .7rem;
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+
+.resume-entry .skills-container .skill-chip{
+    border-radius: 20px;
+    padding: .1rem 1rem;
+    background-color: rgba(0 0 0 / .2);
+}
